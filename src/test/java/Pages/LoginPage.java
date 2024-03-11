@@ -11,14 +11,17 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 	
+	// Driver declaration
 	WebDriver driver;
 	
+	//Constructor creation
 	public LoginPage(WebDriver dr) {
 		driver = dr;
+		//Page factory to store elements
 		PageFactory.initElements(driver, this);
 	}
 	
-	
+	// elements storing by using pagefactory
 	@FindBy(how = How.CSS, using ="#Email")
 	public WebElement username;
 	
@@ -32,6 +35,7 @@ public class LoginPage {
 	public WebElement sign_out_btn;
 	
 	
+	//Method for page actions
 	public void login() {
 		driver.navigate().to("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
